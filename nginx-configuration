@@ -1,0 +1,25 @@
+upstream register{
+	server 127.0.1.1:8080;
+}	
+upstream write{
+	server 127.0.1.1:8081;
+}	
+upstream sync{
+	server 127.0.1.1:8082;
+}	
+server {
+	listen 80;
+	listen 443 ssl;
+	server_name  localhost;
+	location /register/ {
+		proxy_pass https://register/;
+	}
+	location /write/ {
+		proxy_pass https://write/;
+	}
+	location /sync/ {
+		proxy_pass https://sync/;
+	}
+	ssl_certificate /etc/nginx/ssl/server.cert;
+	ssl_certificate_key /etc/nginx/ssl/server.key;
+}

@@ -1,0 +1,17 @@
+Setup nginx
+	install nginx 			-> sudo apt-get install nginx
+	verify through version 		-> nginx -v
+
+Setup firewall
+	enable firewall 		-> sudo ufw enable
+	list firewall modes 		-> sudo ufw app list
+	allow desired firewall mode	-> sudo ufw allow 'Nginx Full'
+	check firewall status		-> sudo ufw status verbose
+	allow ssh			-> sudo ufw allow ssh
+
+To reconfigure nginx, update nginx conf file and restart nginx 
+	restart				-> sudo systemctl restart nginx
+	check nginx status		-> sudo systemctl status nginx
+
+If nginx unable to bind to 443 for https 
+	kill any attached process	-> sudo fuser -k 443/tcp
