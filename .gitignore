@@ -1,3 +1,5 @@
 register/.env
 sync/.env
 write/.env
+server.cert
+server.key
