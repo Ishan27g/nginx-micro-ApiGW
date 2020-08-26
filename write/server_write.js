@@ -2,7 +2,7 @@ const express = require('express');
 const https = require('https');
 const fs = require('fs');
 const app = express();
-const PORT = 8082;
+const PORT = 8081;
 
 //init mongoDB
 //require('./src/db');
@@ -16,12 +16,13 @@ var serverConfig = {
 };
 
 app.get('/user',(res, rsp) => {
-    console.log('Endpoint /sync/user hit')
-    const str = `rsp from server Endpoint /sync/user on port ${PORT}`
+    console.log('Endpoint /write/user hit')
+    const str = `rsp from Endpoint /write/user on port ${PORT}`
     rsp.send(str)
 })
 https.createServer(serverConfig,app).listen(PORT, () => {
     require('dns').lookup(require('os').hostname(), function (err, add, fam) {
-        console.log(`Express server listening on `+ add + `:${PORT}`)
+	console.log('');
+        console.log(`WRITE micro-service listening on `+ add + `:${PORT}`)
      })
 })

@@ -1,0 +1,2 @@
+Endpoint /sync/user
+Port 8082

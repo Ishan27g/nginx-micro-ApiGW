@@ -16,12 +16,13 @@ var serverConfig = {
 };
 
 app.get('/user',(res, rsp) => {
-    console.log('Endpoint /register/user hit')
-    const str = `rsp from server Endpoint /register/user on port ${PORT}`
+    console.log('Endpoint /sync/user hit')
+    const str = `rsp from server Endpoint /sync/user on port ${PORT}`
     rsp.send(str)
 })
 https.createServer(serverConfig,app).listen(PORT, () => {
     require('dns').lookup(require('os').hostname(), function (err, add, fam) {
-        console.log(`Express server listening on `+ add + `:${PORT}`)
+	console.log('');
+        console.log(`REGISTER micro-service listening on `+ add + `:${PORT}`)
      })
 })
