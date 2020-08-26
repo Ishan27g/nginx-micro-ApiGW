@@ -1,3 +1,8 @@
 write/node_modules/
+write/.env
+sync/node_modules/
+sync/.env
+register/node_modules/
+register/.env
 server.cert
 server.key
