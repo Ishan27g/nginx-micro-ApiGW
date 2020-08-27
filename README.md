@@ -1,3 +1,6 @@
+Node and npm should be already installed on server
+
+
 1.  Clone this repo and cd into it
 2.  Generate ssl certificate in repo root                 -> openssl req -nodes -new -x509 -keyout server.key -out server.cert
 3.  Follow Nginx/nginx.txt to install and setup nginx
