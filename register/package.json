@@ -1,8 +1,8 @@
 {
-  "name": "server",
+  "name": "server_reg",
   "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
+  "description": "Microservice for reg API's",
+  "main": "server_reg.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "node server_reg.js",
