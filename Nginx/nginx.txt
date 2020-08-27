@@ -1,16 +1,20 @@
 --------------------------------------------------------------------------
 INSTALLATION 
 ------------------------------------------------------------------------
-setup nginx
-	install nginx 			-> sudo apt-get install nginx
+setup nginx on VM/cloud
+	install and run nginx		-> sudo apt-get install nginx
 	verify through version 		-> nginx -v
+	check nginx status		-> sudo systemctl status nginx
 
-setup firewall
-	enable firewall 		-> sudo ufw enable
+on VM : setup firewall
 	list firewall modes 		-> sudo ufw app list
 	allow ssh			-> sudo ufw allow ssh
 	allow desired firewall mode	-> sudo ufw allow 'Nginx Full'
+	enable firewall 		-> sudo ufw enable
 	check firewall status		-> sudo ufw status verbose
+
+on cloud : allow port 443, 80 and ssh(22)
+	
 
 --------------------------------------------------------------------------
 RUN nginx
@@ -24,4 +28,4 @@ If nginx is unable to bind to 443 for https
 
 
 
-On system restart, firewall and nginx should automatically be up.
+On system restart, firewall-settings and nginx should automatically be up.
